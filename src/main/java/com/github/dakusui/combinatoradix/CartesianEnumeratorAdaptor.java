@@ -4,6 +4,7 @@ import com.github.dakusui.combinatoradix.tuple.AttrValue;
 import com.github.dakusui.combinatoradix.tuple.CartesianEnumerator;
 
 import java.util.*;
+import org.checkerframework.checker.iteration.qual.HasNext;
 
 /**
  * User must guarantee that T is stable in order to use 'indexOf' method.
@@ -30,7 +31,7 @@ public abstract class CartesianEnumeratorAdaptor<T extends Map<U, V>, U, V>
       }
 
       @Override
-      public T next() {
+      public T next(@HasNext Iterator this) {
         return attrValues2map(i.next());
       }
 
