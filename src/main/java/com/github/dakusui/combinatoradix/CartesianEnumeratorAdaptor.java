@@ -30,6 +30,7 @@ public abstract class CartesianEnumeratorAdaptor<T extends Map<U, V>, U, V>
       }
 
       @Override
+      @SuppressWarnings("iteration:method.invocation")  // next implementation: call to next in Iterator implementation
       public T next() {
         return attrValues2map(i.next());
       }
